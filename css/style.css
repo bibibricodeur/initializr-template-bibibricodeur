@@ -1,0 +1,560 @@
+/***
+Description: 
+Dependances: 
+Copyright (c) 20230516 bibibricodeur
+License: WTFPL
+***/
+
+/* ==========================================================================
+   Framework
+   ========================================================================== */
+
+/* Colors (variables) */
+/* https://fr.wikipedia.org/wiki/Couleur_du_Web */
+:root {
+	--color-aqua: #00FFFF;
+	--color-black: #000000;
+	--color-blue: #0000FF;
+	--color-fushia: #FF00FF;
+	--color-green: #008000;
+	--color-gray: #808080;
+	--color-lime: #00FF00;
+	--color-maroon: #800000;
+	--color-navy: #000080;
+	--color-olive: #808000;
+	--color-purple: #800080;
+	--color-red: #FF0000;
+	--color-silver: #C0C0C0;
+	--color-teal: #008080;
+	--color-white: #FFFFFF;
+	--color-yellow: #FFFF00;
+}
+
+html {
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	height: 100vh;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+/* Typography */
+h1 {
+	font-size: 2.1rem;
+}
+
+h2 {
+	font-size: 1.8rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.2rem;
+}
+
+h5 {
+	font-size: 0.9rem;
+}
+
+h6 {
+	font-size: 0.6rem;
+}
+
+/* https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+
+/* For desktop: */
+.col-1 {
+	width: 8.33%;
+}
+
+.col-2 {
+	width: 16.66%;
+}
+
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.33%;
+}
+
+.col-5 {
+	width: 41.66%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-7 {
+	width: 58.33%;
+}
+
+.col-8 {
+	width: 66.66%;
+}
+
+.col-9 {
+	width: 75%;
+}
+
+.col-10 {
+	width: 83.33%;
+}
+
+.col-11 {
+	width: 91.66%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+	/* For mobile phones: */
+	[class*="col-"] {
+		width: 100%;
+	}
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	flex: 1 100%;
+}
+
+.card {
+	box-shadow: 0 1px 3px var(--color-gray);
+	margin: 1rem 0;
+	padding: 1rem;
+	border-radius: 6px;
+}
+
+/* Link */
+a {
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* List */
+.list-item {
+	margin: 0.9em auto;
+	border: solid 1px var(--color-white);
+}
+
+.link-item {
+	display: block;
+	padding: 0.6em;
+}
+
+.link-item:hover {
+	background-color: var(--color-white);
+}
+
+/* Form */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=search],
+input[type=number],
+input[type=file],
+input[type=tel],
+input[type=url],
+select,
+textarea {
+	height: 30px;
+	width: 96%;
+	margin: 10px auto;
+	font-size: 1rem;
+	background: var(--color-whitek);
+	border: 1px solid var(--color-black);
+	border-radius: 3px;
+	transition: all 0.3s ease;
+	font-family: inherit;
+	padding-left: 0.3em;
+}
+
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover,
+input[type=search]:hover,
+input[type=number]:hover,
+input[type=file]:hover,
+input[type=tel]:hover,
+input[type=url]:hover,
+select:hover,
+textarea:hover {
+	border-color: var(--color-black);
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=file]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--color-black);
+}
+
+textarea {
+	min-height: 70px;
+	padding-top: 0.3em;
+}
+
+/* Button */
+.btn,
+[type=submit] {
+	line-height: 30px;
+	font-size: 1rem;
+	width: 90px;
+	color: var(--color-white);
+	background: var(--color-black);
+	border: 1px solid var(--color-black);
+	border-radius: 3px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	margin: 1rem 0;
+}
+
+.btn:hover,
+[type=submit]:hover,
+.btn:focus,
+[type=submit]:focus {
+	opacity: 0.3;
+}
+
+.btn:active,
+[type=submit]:active {
+	opacity: 0.9;
+}
+
+.btn-danger {
+	background: var(--color-red);
+}
+
+.btn-info {
+	background: var(--color-blue);
+}
+
+.btn-normal {
+	background: var(--color-silver);
+	color: var(--color-black);
+}
+
+.btn-success {
+	background: var(--color-green);
+}
+
+.btn-warning {
+	background: var(--color-yellow);
+	color: var(--color-black);
+}
+
+/* Table */
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 3em;
+}
+
+th {
+	background-color: var(--color-gray);
+	color: var(--color-white);
+	border: 1px solid var(--color-white);
+	padding: 12px 0px;
+	text-align: center;
+}
+
+tr,
+td {
+	border: 1px solid var(--color-gray);
+	padding: 7px;
+}
+
+tr:nth-child(even) {
+	background-color: var(--color-silver);
+}
+
+tr:hover {
+	background-color: var(--color-gray);
+}
+
+/* Codes */
+pre {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+pre code {
+	display: block;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+code {
+	background-color: var(--color-black);
+	color: var(--color-lime);
+	border-radius: 3px;
+	padding: 0.6rem;
+}
+
+/* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+
+.container-header {
+	box-shadow: 0 6px 9px var(--color-gray);
+	background-color: var(--color-blue);
+	color: var(--color-white);
+}
+
+.navbar h1 {
+	text-shadow: 1px 1px 1px var(--color-gray);
+}
+
+nav ul li a {
+	background-color: var(--color-navy);
+	color: var(--color-white);
+}
+
+nav ul li a:hover {
+	background-color: var(--color-blue);
+	color: var(--color-white);
+}
+
+.container-article,
+.container-aside {
+	margin: 1rem;
+	padding: 1rem;
+}
+
+article header {
+	margin-top: 0;
+}
+
+.container-aside {
+	border-top: 20px solid var(--color-lime);
+	box-shadow: 0 6px 9px var(--color-gray);
+	background-color: var(--color-green);
+	color: var(--color-white);
+}
+
+.container-footer {
+	border-top: 20px solid var(--color-lime);
+	background-color: var(--color-green);
+	color: var(--color-white);
+}
+
+.container-footer footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+article h1,
+article h2,
+article h3 {
+	margin: 0;
+}
+
+/* Elevator */
+#btn-top {
+	position: fixed;
+	width: 120px;
+	text-align: center;
+	bottom: 75px;
+	right: 12px;
+	z-index: 99;
+	cursor: pointer;
+}
+
+#btn-top:hover {
+	transition-duration: 0.6s;
+	opacity: 0.3;
+}
+
+#switch,
+.hamburger {
+	display: none;
+	padding: 0.6rem;
+	font-weight: bold;
+}
+
+/* https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.container-header {
+		border-bottom: none;
+	}
+
+	.navbar h1 {
+		font-size: 1.8rem;
+		padding-left: 1rem;
+		margin: 0 auto;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.hamburger:hover {
+		background-color: var(--color-navy);
+	}
+
+	#menu {
+		display: none;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#menu li a {
+		display: block;
+		text-align: center;
+		padding: 0.6rem;
+	}
+
+	#switch:checked~#menu {
+		display: block;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.container-header {
+		border-bottom: none;
+	}
+
+	.navbar h1 {
+		font-size: 1.8rem;
+		padding-left: 1rem;
+		margin: 0 auto;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.hamburger:hover {
+		background-color: var(--color-navy);
+	}
+
+	#menu {
+		display: none;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#menu li a {
+		display: block;
+		text-align: center;
+		padding: 0.9rem;
+		/*width: 120px;*/
+	}
+
+	#switch:checked~#menu {
+		display: block;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.container-header {
+		border-bottom: 20px solid var(--color-navy);
+	}
+
+	.navbar {
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.navbar h1 {
+		font-size: 1.8rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	#menu {
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center
+	}
+
+	#menu ul {
+		display: flex;
+	}
+
+	#menu ul li {
+		text-align: center;
+	}
+
+	#menu li a {
+		width: 120px;
+		padding: 24px 0px;
+	}
+
+	#switch,
+	.hamburger {
+		display: none;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.navbar {
+		width: 72%;
+		margin: 0 auto;
+	}
+
+	#menu li a {
+		width: 150px;
+	}
+
+	main {
+		display: flex;
+		width: 75%;
+		margin: 0 auto;
+	}
+
+	.container-article {
+		flex: 2;
+	}
+
+	.container-aside {
+		flex: 1;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
