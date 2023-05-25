@@ -399,11 +399,14 @@ article h3 {
 	opacity: 0.3;
 }
 
-#switch,
+#check,
 .hamburger {
 	display: none;
 	padding: 0.6rem;
 	font-weight: bold;
+}
+.right {
+	float: right;
 }
 
 /* https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
@@ -440,7 +443,7 @@ article h3 {
 		padding: 0.6rem;
 	}
 
-	#switch:checked~#menu {
+	#check:checked~#menu {
 		display: block;
 	}
 }
@@ -478,7 +481,7 @@ article h3 {
 		/*width: 120px;*/
 	}
 
-	#switch:checked~#menu {
+	#check:checked~#menu {
 		display: block;
 	}
 }
@@ -524,7 +527,7 @@ article h3 {
 		padding: 24px 0px;
 	}
 
-	#switch,
+	#check,
 	.hamburger {
 		display: none;
 	}
